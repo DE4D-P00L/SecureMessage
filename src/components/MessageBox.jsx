@@ -73,7 +73,7 @@ function MessageBox() {
         <input
           type="text"
           {...register("newMessage", { required: true })}
-          className="flex-1 bg-transparent border-b-2 border-white p-1"
+          className="flex-1 bg-transparent border-b-2 border-white p-1 min-w-0"
           placeholder="Message"
         />
         <button
