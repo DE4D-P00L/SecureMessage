@@ -12,6 +12,7 @@ function MessageBox() {
 
   const {
     register,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -28,6 +29,7 @@ function MessageBox() {
       } else {
         setMessages(response.data.messages);
         setLoading(false);
+        setValue("newMessage", "");
       }
     } catch (error) {
       setError(error.message);
