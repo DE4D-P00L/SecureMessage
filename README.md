@@ -1,8 +1,21 @@
-# React + Vite
+# Secure Share
+## MERN Stack Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Frontend
+- ReactJS (Base)
+- TailwindCSS (Styling and Responsiveness)
+- React-Hook-Form (Form data handling and client-side validation)
+- React-Router-Dom (App routing)
+- ReduxJS (Data Store)
+- Redux Toolkit (Data Store operations)
+- React Icons (Icons used in app)
+- Axios (Exchange data with server)
+- LocalStorage (Store JWT token on system)
 
-Currently, two official plugins are available:
+## To run the project
+1. Download or Clone Repo.
+2. Run command: npm install
+3. Followed by: npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Environment Keys
+- VITE_SERVER_URL=Your_Server_URL
