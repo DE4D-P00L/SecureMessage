@@ -16,6 +16,25 @@ function MessageBox() {
     formState: { errors },
   } = useForm();
 
+  const fetchMessages = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        import.meta.env.VITE_SERVER_URL + "messages"
+      );
+      if (response.status != 200) {
+        setError(response?.data?.message);
+        setLoading(false);
+      } else {
+        setMessages(response.data.messages);
+        setLoading(false);
+      }
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+    }
+  };
+
   const onSubmit = async (data) => {
     const message = data.newMessage;
     try {
@@ -27,8 +46,7 @@ function MessageBox() {
         }
       );
       if (response.status === 200) {
-        const temp = response.data.message;
-        setMessages([temp, ...messages]);
+        fetchMessages();
       }
     } catch (error) {
       console.log(error.message);
@@ -36,24 +54,6 @@ function MessageBox() {
   };
 
   useEffect(() => {
-    const fetchMessages = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          import.meta.env.VITE_SERVER_URL + "messages"
-        );
-        if (response.status != 200) {
-          setError(response?.data?.message);
-          setLoading(false);
-        } else {
-          setMessages(response.data.messages);
-          setLoading(false);
-        }
-      } catch (error) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
     fetchMessages();
   }, []);
 
