@@ -62,7 +62,7 @@ function MessageBox() {
       <h2 className="text-center font-semibold text-xl mb-2">Secrets</h2>
       <div className="flex flex-col gap-2 overflow-y-auto">
         {!loading &&
-          messages.map((message) => (
+          messages?.map((message) => (
             <MessageItem key={message._id} message={message.message} />
           ))}
       </div>
