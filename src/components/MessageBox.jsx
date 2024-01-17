@@ -61,7 +61,7 @@ function MessageBox() {
   return (
     <div className="bg-slate-600 relative w-full h-full px-2 py-3 rounded-xl pb-[100px]">
       <h2 className="text-center font-semibold text-xl mb-2">Secrets</h2>
-      <div className="flex flex-col gap-2 overflow-y-auto">
+      <div className="flex flex-col gap-2 overflow-y-auto max-h-[100%]">
         {!loading &&
           messages &&
           messages.map((message) => (
