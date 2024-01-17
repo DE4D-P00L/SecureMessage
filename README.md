@@ -1,8 +1,15 @@
-# React + Vite
+# Secure Share
+## MERN Stack Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Frontend
+- ReactJS
+- TailwindCSS
+- React-Hook-Form
+- React-Router-Dom
+- ReduxJS
+- Redux Toolkit
+- React Icons
+- Axios
+- LocalStorage
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### This app uses tokens stored in localstorage to set Redux states and login automatically. It also uses React-Hook-Form to handle data during form submittion using client-side validators. Once Login you can view or share message. These requests are send via axios, some of these contain authorization headers for JWT middleware on backend.
