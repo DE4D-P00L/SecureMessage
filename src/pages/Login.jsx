@@ -36,7 +36,7 @@ function Login() {
         );
         navigate("/");
       } else {
-        setError("root", response.message);
+        setError("root", { message: response.message });
       }
     } catch (error) {
       console.log(error.message);
@@ -66,7 +66,7 @@ function Login() {
             {...register("password", { required: true, minLength: 8 })}
           />
           {errors.password && <p>Password too short</p>}
-          {errors.root && <p>{errors.root}</p>}
+          {errors.root && <p>{errors.root.message}</p>}
         </div>
         <button
           type="submit"
