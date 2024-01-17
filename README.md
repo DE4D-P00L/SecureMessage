@@ -2,14 +2,20 @@
 ## MERN Stack Project
 
 ### Frontend
-- ReactJS
-- TailwindCSS
-- React-Hook-Form
-- React-Router-Dom
-- ReduxJS
-- Redux Toolkit
-- React Icons
-- Axios
-- LocalStorage
+- ReactJS (Base)
+- TailwindCSS (Styling and Responsiveness)
+- React-Hook-Form (Form data handling and client-side validation)
+- React-Router-Dom (App routing)
+- ReduxJS (Data Store)
+- Redux Toolkit (Data Store operations)
+- React Icons (Icons used in app)
+- Axios (Exchange data with server)
+- LocalStorage (Store JWT token on system)
 
-### This app uses tokens stored in localstorage to set Redux states and login automatically. It also uses React-Hook-Form to handle data during form submittion using client-side validators. Once Login you can view or share message. These requests are send via axios, some of these contain authorization headers for JWT middleware on backend.
+## To run the project
+1. Download or Clone Repo.
+2. Run command: npm install
+3. Followed by: npm run dev
+
+## Environment Keys
+- VITE_SERVER_URL=Your_Server_URL
