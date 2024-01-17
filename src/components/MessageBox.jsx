@@ -18,7 +18,6 @@ function MessageBox() {
 
   const onSubmit = async (data) => {
     const message = data.newMessage;
-    console.log(data);
     console.log("Bearer " + token);
     try {
       const response = await axios.post(
@@ -29,8 +28,8 @@ function MessageBox() {
         }
       );
       if (response.status === 200) {
-        console.log(response);
-        setMessages(...messages, response.data.message);
+        const temp = response.data.message;
+        setMessages([...messages, temp]);
       }
     } catch (error) {
       console.log(error.message);
