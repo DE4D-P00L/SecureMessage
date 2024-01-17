@@ -13,11 +13,11 @@ const NavBar = () => {
       <nav className="fixed left-0 h-[70px] w-full flex items-center bg-gray-900 text-white z-10">
         <div className="flex items-center justify-between max-w-7xl w-full mx-auto sm:px-[50px] px-[20px]">
           <h1 className="text-2xl font-bold">
-            <Link to="/">Logo</Link>
+            <Link to="/">SS</Link>
           </h1>
           <ul className="flex sm:gap-3 gap-2 items-center justify-between">
             <li>
-              {isAuthenticated && (
+              {!isAuthenticated && (
                 <button
                   className="text-black bg-white px-2 py-1 cursor-pointer"
                   onClick={() => {
