@@ -12,7 +12,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex w-full md:flex-row flex-col bg-slate-800 text-white  h-[calc(100vh-70px)] sm:px-[50px] px-[20px]">
+    <div className="flex w-full md:flex-row flex-col bg-slate-800 text-white  min-h-[calc(100vh-70px)] sm:px-[50px] px-[20px]">
       <div className="flex-1">Hero</div>
       <div className="flex-1 min-w-[250px] items-center justify-center p-2">
         <MessageBox />
