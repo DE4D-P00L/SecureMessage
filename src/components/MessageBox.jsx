@@ -18,7 +18,6 @@ function MessageBox() {
 
   const onSubmit = async (data) => {
     const message = data.newMessage;
-    console.log("Bearer " + token);
     try {
       const response = await axios.post(
         import.meta.env.VITE_SERVER_URL + "messages",
@@ -29,7 +28,7 @@ function MessageBox() {
       );
       if (response.status === 200) {
         const temp = response.data.message;
-        setMessages([...messages, temp]);
+        setMessages([temp, ...messages]);
       }
     } catch (error) {
       console.log(error.message);
