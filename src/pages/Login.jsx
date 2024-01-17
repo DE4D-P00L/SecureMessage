@@ -30,16 +30,15 @@ function Login() {
         import.meta.env.VITE_SERVER_URL + "user/login",
         { email, password }
       );
-      if (response.status === 200) {
-        dispatch(
-          login({ user: response.data.user, token: response.data.token })
-        );
-        navigate("/");
-      } else {
-        setError("root", { message: response.message });
+
+      if (response.status != 200) {
+        setError("root", { message: "Wrong Password or Username" });
       }
+
+      dispatch(login({ user: response.data.user, token: response.data.token }));
+      navigate("/");
     } catch (error) {
-      console.log(error.message);
+      setError("root", { message: error.response.data.message });
     }
   };
 

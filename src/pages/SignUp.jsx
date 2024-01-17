@@ -9,6 +9,7 @@ function SignUp() {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm();
 
@@ -36,7 +37,7 @@ function SignUp() {
         }
       }
     } catch (error) {
-      console.log(error.message);
+      setError("root", { message: error.response.data.message });
     }
   };
 
@@ -67,6 +68,7 @@ function SignUp() {
             {...register("email", { required: true, pattern: /^.+@.+\..+$/ })}
           />
           {errors.email && <p>Invalid Email</p>}
+          {errors.root && <p>{errors.root.message}</p>}
         </div>
         <div className="flex flex-col gap-1 w-full">
           <input
