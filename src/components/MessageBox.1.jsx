@@ -4,7 +4,7 @@ import MessageItem from "./MessageItem";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 
-function MessageBox() {
+export function MessageBox() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
@@ -30,7 +30,7 @@ function MessageBox() {
       );
       if (response.status === 200) {
         console.log(response);
-        setMessages(...messages, response.data.message);
+        // setMessages(...messages, response);
       }
     } catch (error) {
       console.log(error.message);
@@ -64,8 +64,7 @@ function MessageBox() {
       <h2 className="text-center font-semibold text-xl mb-2">Secrets</h2>
       <div className="flex flex-col gap-2 overflow-y-auto">
         {!loading &&
-          messages &&
-          messages.map((message) => (
+          messages?.map((message) => (
             <MessageItem key={message._id} message={message.message} />
           ))}
       </div>
@@ -87,5 +86,3 @@ function MessageBox() {
     </div>
   );
 }
-
-export default MessageBox;
