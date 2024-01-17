@@ -10,6 +10,7 @@ function Login() {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm();
 
@@ -34,6 +35,8 @@ function Login() {
           login({ user: response.data.user, token: response.data.token })
         );
         navigate("/");
+      } else {
+        setError("root", response.message);
       }
     } catch (error) {
       console.log(error.message);
@@ -63,6 +66,7 @@ function Login() {
             {...register("password", { required: true, minLength: 8 })}
           />
           {errors.password && <p>Password too short</p>}
+          {errors.root && <p>{errors.root}</p>}
         </div>
         <button
           type="submit"

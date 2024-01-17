@@ -41,9 +41,7 @@ function MessageBox() {
       const response = await axios.post(
         import.meta.env.VITE_SERVER_URL + "messages",
         { message },
-        {
-          headers: { Authorization: "Bearer " + token },
-        }
+        { headers: { Authorization: "Bearer " + token } }
       );
       if (response.status === 200) {
         fetchMessages();
