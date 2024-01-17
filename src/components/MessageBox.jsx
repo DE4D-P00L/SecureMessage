@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MessageItem from "./MessageItem";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 
 function MessageBox() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
+  const token = useSelector((state) => state.auth.token);
 
   const {
     register,
@@ -19,7 +21,10 @@ function MessageBox() {
     try {
       const response = await axios.post(
         import.meta.env.VITE_SERVER_URL + "messages",
-        { message }
+        { message },
+        {
+          headers: { Authorization: "Bearer " + token },
+        }
       );
       if (response.status === 200) {
         console.log(response);
