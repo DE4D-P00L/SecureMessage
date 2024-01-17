@@ -3,7 +3,7 @@ import { logout } from "../features/authSlice";
 import { Outlet, useNavigate, Link } from "react-router-dom";
 
 const NavBar = () => {
-  const userState = useSelector((state) => state.auth);
+  const userState = useSelector((state) => state.auth.token);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isAuthenticated = !!userState;
@@ -17,7 +17,7 @@ const NavBar = () => {
           </h1>
           <ul className="flex sm:gap-3 gap-2 items-center justify-between">
             <li>
-              {!isAuthenticated && (
+              {isAuthenticated && (
                 <button
                   className="text-black bg-white px-2 py-1 cursor-pointer"
                   onClick={() => {

@@ -6,7 +6,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="bg-slate-800">
+    <div className="bg-gradient-to-b from-slate-900 to-slate-700">
       <div className="max-w-7xl mx-auto">
         {/* <RouterProvider router={router}>
           <NavBar />
