@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 import SignUp from "./pages/SignUp";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
@@ -18,7 +19,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />
-            {/* <Route path="*" element={<NoMatch />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </div>
