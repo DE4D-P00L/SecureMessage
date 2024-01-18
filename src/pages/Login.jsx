@@ -67,9 +67,14 @@ function Login() {
           {errors.password && <p>Password too short</p>}
           {errors.root && <p>{errors.root.message}</p>}
         </div>
+        <Link
+          to="/forgot-password"
+          className="underline underline-offset-4 my-3">
+          Forgot Password
+        </Link>
         <button
           type="submit"
-          className="bg-white mt-7 text-slate-800 font-semibold text-lg rounded-lg px-3 py-1">
+          className="bg-white text-slate-800 font-semibold text-lg rounded-lg px-3 py-1">
           Login
         </button>
         <h2 className="text-center">
